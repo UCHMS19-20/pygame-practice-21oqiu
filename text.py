@@ -3,9 +3,14 @@ import pygame
 
 # Initialize pygame so it runs in the background and manages things
 pygame.init()
-
+ 
 #make colors
 blue = pygame.Color(158,36,243)
+
+# create font object
+font = pygame.font.SysFont("ComicSans", 100)
+# create font
+text = font.render("beans", True, blue)
 
 # Create a display. Size must be a tuple, which is why it's in parentheses
 screen = pygame.display.set_mode( (400, 300) )
@@ -19,6 +24,6 @@ while True:
         if event.type == pygame.QUIT:
             # If so, exit the program
             sys.exit()
-    #fill screen w color
-    screen.fill(blue)
+    #display text
+    screen.blit(text, (0,0))
     pygame.display.flip()
